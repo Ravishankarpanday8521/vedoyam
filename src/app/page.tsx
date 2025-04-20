@@ -94,14 +94,14 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://vedoyam.com/" />
         <meta property="og:title" content="Vedoyam - Preserving Vedic Knowledge and Sanskrit Heritage" />
-        <meta property="og:description" content="Explore the beauty of Sanskrit language and Vedic wisdom with Vedoyam's educational resources and cultural preservation initiatives." />
+        <meta property="og:description" content="Explore the beauty of Sanskrit language and Vedic wisdom with Vedoyam&apos;s educational resources and cultural preservation initiatives." />
         <meta property="og:image" content="https://vedoyam.com/images/vedoyam-logo-social.png" />
         
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://vedoyam.com/" />
         <meta property="twitter:title" content="Vedoyam - Preserving Vedic Knowledge and Sanskrit Heritage" />
-        <meta property="twitter:description" content="Explore the beauty of Sanskrit language and Vedic wisdom with Vedoyam's educational resources and cultural preservation initiatives." />
+        <meta property="twitter:description" content="Explore the beauty of Sanskrit language and Vedic wisdom with Vedoyam&apos;s educational resources and cultural preservation initiatives." />
         <meta property="twitter:image" content="https://vedoyam.com/images/vedoyam-logo-social.png" />
         
         {/* Schema.org markup */}
@@ -163,23 +163,21 @@ export default function Home() {
         </header>
 
         {/* Main Content with background image */}
-        {/* Main Content with background image */}
-      <main
-        className="px-6 md:px-20 py-16 text-center bg-cover bg-center bg-no-repeat min-h-[100vh] flex flex-col items-center justify-center"
-        style={{
-          backgroundImage: "url('/images/Full-Background.jpg')",
-        }}
-      >
-        <h1 className="mb-10 text-3xl text-white drop-shadow-md">
-          Welcome to Vedoyam
-        </h1>
-        <p className="mb-100 text-lg text-white drop-shadow-sm">
-          Vedoyam is a platform devoted to the promotion and preservation of Vedic<br />
-          and Indian Sanatani culture and heritage. Join us on a journey to explore<br />
-          and gain a deeper understanding of this ancient yet timeless legacy
-        </p>
-      </main>
-
+        <main
+          className="px-6 md:px-20 py-16 text-center bg-cover bg-center bg-no-repeat min-h-[100vh] flex flex-col items-center justify-center"
+          style={{
+            backgroundImage: "url('/images/Full-Background.jpg')",
+          }}
+        >
+          <h1 className="mb-10 text-3xl text-white drop-shadow-md">
+            Welcome to Vedoyam
+          </h1>
+          <p className="mb-100 text-lg text-white drop-shadow-sm">
+            Vedoyam is a platform devoted to the promotion and preservation of Vedic<br />
+            and Indian Sanatani culture and heritage. Join us on a journey to explore<br />
+            and gain a deeper understanding of this ancient yet timeless legacy
+          </p>
+        </main>
 
         {/* About Us Section */}
         <section
@@ -192,16 +190,16 @@ export default function Home() {
               Vedoyam is a platform dedicated to the propagation of the Sanskrit language and its heritage. Join us to explore and learn more about this ancient yet timeless language.
             </p>
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-justify mb-4">
-              At Vedoyam, we believe in the immense power of Sanskrit as a foundation for understanding ancient knowledge, philosophy, and culture. Our mission is to provide accessible resources, share profound Sanskrit content, and encourage a deeper connection to this classical language. We aim to open up the rich traditions of Sanskrit to modern audiences, whether you're a beginner or an expert.
+              At Vedoyam, we believe in the immense power of Sanskrit as a foundation for understanding ancient knowledge, philosophy, and culture. Our mission is to provide accessible resources, share profound Sanskrit content, and encourage a deeper connection to this classical language. We aim to open up the rich traditions of Sanskrit to modern audiences, whether you&apos;re a beginner or an expert.
             </p>
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-justify mb-4">
-              We offer a range of content, from beginner lessons to advanced studies, focusing on Sanskrit literature, grammar, and its applications in modern-day education. Our goal is to inspire individuals to explore the beauty of Sanskrit, embrace its cultural significance, and understand its relevance in today's world.
+              We offer a range of content, from beginner lessons to advanced studies, focusing on Sanskrit literature, grammar, and its applications in modern-day education. Our goal is to inspire individuals to explore the beauty of Sanskrit, embrace its cultural significance, and understand its relevance in today&apos;s world.
             </p>
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-justify mb-4">
               Our core objective is not only to preserve the heritage of Sanskrit but also to actively contribute to its growth by fostering a new generation of students, scholars, and thinkers. We aim to offer free educational resources in the future to make Sanskrit education accessible to everyone, irrespective of their background.
             </p>
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-justify">
-              Through Vedoyam, we encourage the sharing of new ideas and perspectives on Sanskrit, inviting individuals to reflect, learn, and grow. We believe that understanding Sanskrit will not only enrich one's knowledge but will also deepen one's connection to the roots of civilization, offering a timeless path to intellectual growth.
+              Through Vedoyam, we encourage the sharing of new ideas and perspectives on Sanskrit, inviting individuals to reflect, learn, and grow. We believe that understanding Sanskrit will not only enrich one&apos;s knowledge but will also deepen one&apos;s connection to the roots of civilization, offering a timeless path to intellectual growth.
             </p>
           </div>
           <hr className="w-full border-t-4 border-[#4b3d2d] my-10" />
@@ -217,7 +215,7 @@ export default function Home() {
 
             <div className="relative bg-[#f9f6f1] p-4 sm:p-6 rounded-xl shadow-lg">
               <p className="text-base sm:text-lg md:text-xl font-semibold leading-relaxed italic">
-                "{shlokas[current].text}"
+                &quot;{shlokas[current].text}&quot;
               </p>
               <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base font-light text-gray-700">
                 {shlokas[current].translation}
