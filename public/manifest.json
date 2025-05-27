@@ -1,0 +1,35 @@
+{
+  "name": "Vedoyam - Preserving Vedic Knowledge and Sanskrit Heritage",
+  "short_name": "Vedoyam",
+  "description": "Vedoyam is dedicated to promoting Sanskrit language, Vedic knowledge, and Indian cultural heritage through educational resources, daily shlokas, and research materials.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#d5bb96",
+  "theme_color": "#4b3d2d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/vedoyam logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/vedoyam logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["education", "culture", "religion"],
+  "lang": "en",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "/images/vedoyam logo.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}

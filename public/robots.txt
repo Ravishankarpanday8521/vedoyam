@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vedoyam.com/sitemap.xml
+
+# Disallow crawling of admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow crawling of important pages
+Allow: /
+Allow: /about
+Allow: /blog
+Allow: /contact
+Allow: /services
+
+# Crawl-delay (optional, in seconds)
+Crawl-delay: 1
