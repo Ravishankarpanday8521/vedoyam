@@ -14,7 +14,7 @@ import ContactSection from "../components/ContactSection";
 import JoinTeamSection from "../components/JoinTeamSection";
 import Footer from "../components/Footer";
 
-// Import dataljwehfouhwe   ghgh 
+// Import dataljwn  ehfouhwe   ghgh 
 import { blogContent, shlokas, team, videos } from "../data/content";
 
 export default function Home() {
