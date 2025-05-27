@@ -12,6 +12,7 @@ import VideoSection from "../components/VideoSection";
 import TeamSection from "../components/TeamSection";
 import ContactSection from "../components/ContactSection";
 import JoinTeamSection from "../components/JoinTeamSection";
+import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 
 // Import dataljwn  ehfouhwe   ghgh  jhskjdeg
@@ -216,6 +217,8 @@ export default function Home() {
         />
 
         <ContactSection />
+
+        <FAQ />
 
         <JoinTeamSection setShowBlog={setShowBlog} />
 
