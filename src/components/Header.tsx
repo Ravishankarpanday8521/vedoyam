@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import { useState } from "react";
+
 import { ChevronRight, Menu, X, BookOpen, Video, Search, Phone } from "lucide-react";
 
 interface HeaderProps {
