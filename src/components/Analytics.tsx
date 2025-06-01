@@ -93,60 +93,65 @@ export default function Analytics() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // Load Google Analytics script
-    const script1 = document.createElement('script');
-    script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    script1.async = true;
-    document.head.appendChild(script1);
+    const initializeAnalytics = async () => {
+      // Load Google Analytics script
+      const script1 = document.createElement('script');
+      script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+      script1.async = true;
+      document.head.appendChild(script1);
 
-    const script2 = document.createElement('script');
-    script2.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${GA_MEASUREMENT_ID}', {
-        page_path: window.location.pathname,
-        custom_map: {
-          'custom_parameter_1': 'sanskrit_learning',
-          'custom_parameter_2': 'vedic_knowledge'
+      const script2 = document.createElement('script');
+      script2.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${GA_MEASUREMENT_ID}', {
+          page_path: window.location.pathname,
+          custom_map: {
+            'custom_parameter_1': 'sanskrit_learning',
+            'custom_parameter_2': 'vedic_knowledge'
+          }
+        });
+      `;
+      document.head.appendChild(script2);
+
+      // Track scroll depth
+      let maxScroll = 0;
+      const handleScroll = () => {
+        const scrollPercent = Math.round(
+          (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+        );
+
+        if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+          maxScroll = scrollPercent;
+          trackScrollDepth(scrollPercent);
         }
-      });
-    `;
-    document.head.appendChild(script2);
+      };
 
-    // Track scroll depth
-    let maxScroll = 0;
-    const handleScroll = () => {
-      const scrollPercent = Math.round(
-        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
-      );
+      // Track time on page
+      const startTime = Date.now();
+      const handleBeforeUnload = () => {
+        const timeOnPage = Date.now() - startTime;
+        trackEngagement(timeOnPage);
+      };
 
-      if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
-        maxScroll = scrollPercent;
-        trackScrollDepth(scrollPercent);
-      }
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('beforeunload', handleBeforeUnload);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('beforeunload', handleBeforeUnload);
+      };
     };
 
-    // Track time on page
-    const startTime = Date.now();
-    const handleBeforeUnload = () => {
-      const timeOnPage = Date.now() - startTime;
-      trackEngagement(timeOnPage);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
+    initializeAnalytics();
   }, []);
 
   useEffect(() => {
-    // Track page views on route change
-    const url = pathname + searchParams.toString();
-    trackPageView(url);
+    if (pathname && searchParams) {
+      const url = pathname + searchParams.toString();
+      trackPageView(url);
+    }
   }, [pathname, searchParams]);
 
   return null;

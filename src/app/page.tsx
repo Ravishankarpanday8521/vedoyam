@@ -1,6 +1,6 @@
 'use client';
 import Head from "next/head";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 
 // Import components
 import Header from "../components/Header";
@@ -77,7 +77,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <Head>
         <title>Vedoyam - Preserving Vedic Knowledge and Sanskrit Heritage</title>
         <meta name="description" content="Vedoyam is dedicated to promoting Sanskrit language, Vedic knowledge, and Indian cultural heritage through educational resources, daily shlokas, and research materials." />
@@ -224,6 +224,6 @@ export default function Home() {
 
         <Footer setShowBlog={setShowBlog} />
       </div>
-    </>
+    </Suspense>
   );
 }
