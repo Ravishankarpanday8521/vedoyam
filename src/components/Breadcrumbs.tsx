@@ -29,7 +29,7 @@ export default function Breadcrumbs({ customItems, className = '' }: Breadcrumbs
     let currentPath = '';
     pathSegments.forEach((segment, index) => {
       currentPath += `/${segment}`;
-      
+
       // Convert segment to readable name
       const name = segment
         .split('-')
@@ -56,9 +56,9 @@ export default function Breadcrumbs({ customItems, className = '' }: Breadcrumbs
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbs.map((item, index) => ({
+    "itemListElement": breadcrumbs.map((item, idx) => ({
       "@type": "ListItem",
-      "position": index + 1,
+      "position": idx + 1,
       "name": item.name,
       "item": `https://vedoyam.com${item.href}`
     }))
@@ -71,10 +71,10 @@ export default function Breadcrumbs({ customItems, className = '' }: Breadcrumbs
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      
+
       {/* Breadcrumb Navigation */}
-      <nav 
-        aria-label="Breadcrumb" 
+      <nav
+        aria-label="Breadcrumb"
         className={`flex items-center space-x-2 text-sm text-gray-600 mb-4 ${className}`}
       >
         <ol className="flex items-center space-x-2">
@@ -83,10 +83,10 @@ export default function Breadcrumbs({ customItems, className = '' }: Breadcrumbs
               {index > 0 && (
                 <ChevronRight className="w-4 h-4 mx-2 text-gray-400" />
               )}
-              
+
               {index === breadcrumbs.length - 1 ? (
                 // Current page - not a link
-                <span 
+                <span
                   className="text-gray-900 font-medium"
                   aria-current="page"
                 >
@@ -126,7 +126,7 @@ export const useBreadcrumbs = (customItems?: BreadcrumbItem[]) => {
     let currentPath = '';
     pathSegments.forEach((segment) => {
       currentPath += `/${segment}`;
-      
+
       const name = segment
         .split('-')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))

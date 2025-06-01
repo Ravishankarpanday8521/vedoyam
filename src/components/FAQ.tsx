@@ -142,7 +142,7 @@ export default function FAQ({ faqs = defaultFAQs, title = "Frequently Asked Ques
 
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-4">
-            Have more questions? We'd love to help!
+            Have more questions? We&apos;d love to help!
           </p>
           <a
             href="#contact"

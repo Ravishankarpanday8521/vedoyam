@@ -8,13 +8,13 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXX
 
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
-    dataLayer: any[];
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
   }
 }
 
 // Google Analytics tracking function
-export const gtag = (...args: any[]) => {
+export const gtag = (...args: unknown[]) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag(...args);
   }
@@ -120,7 +120,7 @@ export default function Analytics() {
       const scrollPercent = Math.round(
         (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
       );
-      
+
       if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
         maxScroll = scrollPercent;
         trackScrollDepth(scrollPercent);
