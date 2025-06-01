@@ -27,7 +27,7 @@ export default function Breadcrumbs({ customItems, className = '' }: Breadcrumbs
     ];
 
     let currentPath = '';
-    pathSegments.forEach((segment, index) => {
+    pathSegments.forEach((segment) => {
       currentPath += `/${segment}`;
 
       // Convert segment to readable name
